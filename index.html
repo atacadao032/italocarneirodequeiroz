@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Italo Carneiro de Queiroz | Telefonia, Comunicação e Suplementos Naturais</title>
+<meta name="description" content="Loja especializada em equipamentos de telefonia e comunicação e em suplementos naturais, em Salvador - BA.">
+<style>
+  :root{
+    --ink:#1a1f1c;
+    --paper:#f2efe6;
+    --paper-2:#ffffff;
+    --line:#dcd6c6;
+    --tech:#1f5f6b;
+    --tech-deep:#123c45;
+    --nat:#5c7a3a;
+    --nat-deep:#3a4f24;
+    --muted:#6f6a5c;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* NAV */
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    max-width:1040px;
+    margin:0 auto;
+    padding:26px 24px;
+  }
+  .brand{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:20px;
+    letter-spacing:.01em;
+  }
+  .brand strong{font-weight:700;}
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:32px;
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+  nav ul a{text-decoration:none; color:var(--ink); opacity:.8;}
+  nav ul a:hover{opacity:1;}
+
+  /* HERO */
+  .hero{
+    max-width:1040px;
+    margin:0 auto;
+    padding:40px 24px 70px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero .eyebrow{
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--tech);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    font-size:clamp(30px,4.2vw,44px);
+    line-height:1.15;
+    margin:0 0 20px;
+  }
+  .hero p.lead{
+    font-size:16px;
+    color:var(--muted);
+    max-width:46ch;
+    margin:0 0 28px;
+  }
+  .hero-tags{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .tag{
+    font-size:12px;
+    padding:7px 14px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    background:var(--paper-2);
+  }
+  .tag.tech{color:var(--tech-deep); border-color:#bcd6d9;}
+  .tag.nat{color:var(--nat-deep); border-color:#cfdcb8;}
+
+  .hero-visual{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .hero-visual .row{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .dot{
+    width:10px; height:10px; border-radius:50%;
+    margin-top:6px; flex-shrink:0;
+  }
+  .dot.tech{background:var(--tech);}
+  .dot.nat{background:var(--nat);}
+  .hero-visual .row p{margin:0; font-size:14px; color:var(--muted);}
+  .hero-visual .row strong{display:block; font-size:14px; color:var(--ink); margin-bottom:2px;}
+
+  /* SECTIONS */
+  section{
+    max-width:1040px;
+    margin:0 auto;
+    padding:64px 24px;
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:36px;
+  }
+  .section-num{
+    font-family:Georgia,serif;
+    font-size:14px;
+    color:var(--muted);
+  }
+  h2{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    font-size:28px;
+    margin:0;
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:48px;
+  }
+  .about-grid p{
+    font-size:16px;
+    color:#3d3a32;
+    max-width:60ch;
+  }
+  .about-facts{
+    border-left:2px solid var(--line);
+    padding-left:22px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .about-facts div{margin-bottom:14px;}
+  .about-facts .k{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:11px;
+    color:var(--muted);
+    margin-bottom:2px;
+  }
+  .about-facts .v{color:var(--ink); font-size:14px;}
+
+  /* ACTIVITY CARDS */
+  .activities{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .activity-card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .activity-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:4px;
+  }
+  .activity-card.tech::before{background:var(--tech);}
+  .activity-card.nat::before{background:var(--nat);}
+  .activity-card .cnae{
+    font-family:'Courier New',monospace;
+    font-size:12px;
+    color:var(--muted);
+    margin:0 0 10px;
+    letter-spacing:.02em;
+  }
+  .activity-card h3{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:20px;
+    margin:0 0 14px;
+  }
+  .activity-card p{
+    font-size:14.5px;
+    color:#4a463c;
+    margin:0 0 16px;
+  }
+  .activity-card ul{
+    margin:0;
+    padding-left:18px;
+    font-size:13.5px;
+    color:var(--muted);
+  }
+  .activity-card ul li{margin-bottom:6px;}
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .contact-block .k{
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:11px;
+    color:var(--muted);
+    margin:0 0 8px;
+  }
+  .contact-block .v{
+    font-size:17px;
+    margin:0 0 22px;
+  }
+  .contact-block .v.mono{font-family:'Courier New',monospace; font-size:15px;}
+
+  footer{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 50px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  @media (max-width:720px){
+    .hero{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-facts{border-left:none; border-top:2px solid var(--line); padding-left:0; padding-top:18px;}
+    .activities{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    nav ul{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="brand">Italo Carneiro <strong>de Queiroz</strong></div>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#atuacao">Área de atuação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Salvador · Bahia</p>
+      <h1>Telefonia e comunicação de um lado. Bem-estar natural do outro.</h1>
+      <p class="lead">Uma empresa de Salvador que atua em duas frentes: equipamentos de telefonia e comunicação, e suplementos naturais — atendimento direto, produtos selecionados e foco no bairro de Brotas.</p>
+      <div class="hero-tags">
+        <span class="tag tech">Equipamentos de telefonia</span>
+        <span class="tag nat">Suplementos naturais</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="row">
+        <span class="dot tech"></span>
+        <p><strong>Comércio varejista de telefonia</strong>Venda de aparelhos, acessórios e equipamentos de comunicação, com atendimento especializado.</p>
+      </div>
+      <div class="row">
+        <span class="dot nat"></span>
+        <p><strong>Suplementos e produtos naturais</strong>Linha de suplementos alimentares e produtos naturais para quem busca qualidade de vida.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>Sobre a empresa</h2>
+    </div>
+    <div class="about-grid">
+      <p>
+        Italo Carneiro de Queiroz é uma empresa com sede em Salvador, no bairro de Brotas, que reúne
+        duas áreas de atuação complementares: o comércio de equipamentos de telefonia e comunicação
+        e a venda de suplementos naturais. A proposta é simples — oferecer produtos de qualidade,
+        com atendimento próximo e conhecimento real sobre o que é vendido, seja um aparelho de
+        telefone ou um suplemento alimentar.
+      </p>
+      <div class="about-facts">
+        <div>
+          <div class="k">Razão social</div>
+          <div class="v">Italo Carneiro de Queiroz</div>
+        </div>
+        <div>
+          <div class="k">CNPJ</div>
+          <div class="v">37.799.345/0001-67</div>
+        </div>
+        <div>
+          <div class="k">Tipo de estabelecimento</div>
+          <div class="v">Matriz</div>
+        </div>
+        <div>
+          <div class="k">Localidade</div>
+          <div class="v">Salvador, Bahia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="atuacao">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Área de atuação</h2>
+    </div>
+    <div class="activities">
+      <div class="activity-card tech">
+        <p class="cnae">CNAE 47.52-1/00</p>
+        <h3>Telefonia e comunicação</h3>
+        <p>Comércio varejista especializado em equipamentos de telefonia e comunicação — venda de aparelhos celulares, acessórios e dispositivos voltados à comunicação pessoal.</p>
+        <ul>
+          <li>Aparelhos de telefonia móvel</li>
+          <li>Acessórios e periféricos</li>
+          <li>Equipamentos de comunicação em geral</li>
+        </ul>
+      </div>
+      <div class="activity-card nat">
+        <p class="cnae">CNAE 47.29-6/99</p>
+        <h3>Suplementos naturais</h3>
+        <p>Comércio varejista de produtos alimentícios especializados, incluindo suplementos e produtos naturais e dietéticos voltados à alimentação saudável.</p>
+        <ul>
+          <li>Suplementos alimentares</li>
+          <li>Produtos naturais e dietéticos</li>
+          <li>Itens voltados ao bem-estar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Contato e endereço</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-block">
+        <p class="k">Endereço</p>
+        <p class="v">Rua Álvaro Adorno, 9<br>Engenho Velho de Brotas, Brotas<br>Salvador - BA</p>
+        <p class="k">CEP</p>
+        <p class="v mono">40.243-025</p>
+      </div>
+      <div class="contact-block">
+        <p class="k">Telefone</p>
+        <p class="v mono">(11) 92005-0948</p>
+        <p class="k">Cidade</p>
+        <p class="v">Salvador, Bahia — Brasil</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Italo Carneiro de Queiroz</span>
+    <span>Salvador, Bahia — Brasil</span>
+  </footer>
+
+</body>
+</html>
